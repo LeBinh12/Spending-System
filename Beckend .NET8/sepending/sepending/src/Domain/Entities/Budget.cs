@@ -2,14 +2,14 @@ namespace sepending.Domain.Entities;
 
 public class Budget
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
-    public int CategoryId { get; set; }
-    public decimal Amount { get; set; }
-    public string Period { get; set; } = "MONTHLY"; 
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public int id { get; set; }
+    public int user_id { get; set; }
+    public int category_id { get; set; }
+    public decimal amount { get; set; }
+    public string period { get; set; } = "MONTHLY"; 
+    public DateTime start_date { get; set; }
+    public DateTime end_date { get; set; }
+    public DateTime created_at { get; set; } = DateTime.UtcNow;
 
     public Category Category { get; set; } = null!;
 }

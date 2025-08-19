@@ -2,14 +2,14 @@ namespace sepending.Domain.Entities;
 
 public class Transaction
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
-    public int CategoryId { get; set; }
-    public decimal Amount { get; set; }
-    public string Type { get; set; } = "EXPENSE";
-    public DateTime TransactionDate { get; set; }
-    public string? Note { get; set; }
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public int id { get; set; }
+    public int user_id { get; set; }
+    public int category_id { get; set; }
+    public decimal amount { get; set; }
+    public string type { get; set; } = "EXPENSE";
+    public DateTime transaction_date { get; set; }
+    public string? note { get; set; }
+    public DateTime created_at { get; set; } = DateTime.UtcNow;
 
     public Category Category { get; set; } = null!;
 }
