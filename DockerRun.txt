@@ -1,0 +1,6 @@
+-- Docker cho Java
+docker-compose --env-file .env up --build
+
+-- Docker cho .NET
+
+

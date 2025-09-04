@@ -5,6 +5,7 @@ import com.example.demo.Dto.Request.RegisterRequest;
 import com.example.demo.Dto.Response.AuthResponse;
 import com.example.demo.Dto.Response.UserInfoResponse;
 import com.example.demo.Service.AuthService;
+import com.example.demo.Shared.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,17 +19,17 @@ public class AuthenController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
+    public ResponseEntity<ApiResponse<String>> register(@RequestBody RegisterRequest request) {
         return ResponseEntity.ok(authService.Register(request));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest req) {
+    public ResponseEntity<ApiResponse<AuthResponse>> login(@RequestBody LoginRequest req) {
         return ResponseEntity.ok(authService.login(req));
     }
 
     @GetMapping("/validate")
-    public ResponseEntity<UserInfoResponse> validate(@RequestParam String token) {
+    public ResponseEntity<ApiResponse<UserInfoResponse>> validate(@RequestParam String token) {
         return ResponseEntity.ok(authService.validate(token));
     }
 }

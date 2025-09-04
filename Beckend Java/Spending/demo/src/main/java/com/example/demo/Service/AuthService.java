@@ -7,6 +7,7 @@ import com.example.demo.Repository.UserRepository;
 import com.example.demo.Dto.Request.LoginRequest;
 import com.example.demo.Dto.Request.RegisterRequest;
 import com.example.demo.Dto.Response.AuthResponse;
+import com.example.demo.Shared.ApiResponse;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,12 +23,12 @@ public class AuthService {
         this.jwtUtil = jwtUtil;
     }
 
-    public String Register(RegisterRequest request){
+    public ApiResponse<String> Register(RegisterRequest request){
         if(userRepository.existsByUsername(request.getUsername())){
-            throw new RuntimeException("Username này đã tồn tại");
+            return ApiResponse.error("Username này đã tồn tại", 400);
         }
         if(userRepository.existsByEmail(request.getEmail())){
-            throw new RuntimeException("Email này đã tồn tại");
+            return ApiResponse.error("Email này đã tồn tại", 400);
         }
 
         User user = User.builder()
@@ -38,30 +39,32 @@ public class AuthService {
                 .build();
 
         userRepository.save(user);
-        return "User registered successfully!";
+        return ApiResponse.success("User registered successfully!", "Đăng ký thành công");
     }
 
-    public AuthResponse login(LoginRequest request) {
+    public ApiResponse<AuthResponse> login(LoginRequest request) {
         User user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("Người đùng không tồn tại"));
 
         if(!passwordEncoder.matches(request.getPassword(), user.getPassword())){
-            throw new RuntimeException("Thông ti xác thực không hợp lệ");
+            return ApiResponse.error("Thông tin xác thực không hợp lệ", 401);
         }
 
         String token = jwtUtil.generateToken(user.getUsername());
-        return new AuthResponse(token);
+        return ApiResponse.success(new AuthResponse(token), "Đăng nhập thành công");
     }
 
-    public UserInfoResponse validate(String token) {
+    public ApiResponse<UserInfoResponse> validate(String token) {
         if(!jwtUtil.validateToken(token)) {
-            throw new RuntimeException("Thông tin đăng nhập không hợp lệ");
+            return ApiResponse.error("Thông tin đăng nhập không hợp lệ", 401);
         }
 
         String name = jwtUtil.extractUsername(token);
         User user = userRepository.findByUsername(name)
                 .orElseThrow(() -> new RuntimeException("User không tồn tại"));
 
-        return new UserInfoResponse(user.getId(), user.getUsername());
-    }
+        return ApiResponse.success(
+                new UserInfoResponse(user.getId(), user.getUsername()),
+                "Token hợp lệ"
+        );    }
 }

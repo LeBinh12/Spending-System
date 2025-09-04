@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nCoPWXx1bKk=",
+  "dgSpecHash": "OH+a6kEJWOI=",
   "success": true,
-  "projectFilePath": "E:\\Spending System\\Beckend .NET8\\sepending\\sepending\\sepending.csproj",
+  "projectFilePath": "E:\\Cá nhân\\Spending System\\Beckend .NET8\\sepending\\sepending\\sepending.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PHUOC BINH\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\PHUOC BINH\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.17\\microsoft.aspnetcore.authentication.jwtbearer.8.0.17.nupkg.sha512",

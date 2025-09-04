@@ -5,7 +5,9 @@ services:
     container_name: spring-demo
     ports:
       - "5005:5005"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/spending
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: 19006292
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/spending
+#      SPRING_DATASOURCE_USERNAME: postgres
+#      SPRING_DATASOURCE_PASSWORD: 19006292
+    env_file:
+      - .env.production

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sepending")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3edda45a4210bc1532cd831ca6953f751bdf71e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d6e89c1fd764c694719cfaee561ee57b80a15a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("sepending")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sepending")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

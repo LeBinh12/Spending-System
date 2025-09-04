@@ -3717,11 +3717,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Spending System\\Beckend .NET8\\sepending\\sepending\\sepending.csproj",
+      "projectUniqueName": "E:\\Cá nhân\\Spending System\\Beckend .NET8\\sepending\\sepending\\sepending.csproj",
       "projectName": "sepending",
-      "projectPath": "E:\\Spending System\\Beckend .NET8\\sepending\\sepending\\sepending.csproj",
+      "projectPath": "E:\\Cá nhân\\Spending System\\Beckend .NET8\\sepending\\sepending\\sepending.csproj",
       "packagesPath": "C:\\Users\\PHUOC BINH\\.nuget\\packages\\",
-      "outputPath": "E:\\Spending System\\Beckend .NET8\\sepending\\sepending\\obj\\",
+      "outputPath": "E:\\Cá nhân\\Spending System\\Beckend .NET8\\sepending\\sepending\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
