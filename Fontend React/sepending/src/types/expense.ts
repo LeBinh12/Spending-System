@@ -5,3 +5,8 @@ export interface Expense {
   amount: number;
   category: string;
 }
+
+export interface User {
+  id: number;
+  username: string;
+}
